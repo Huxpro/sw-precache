@@ -426,9 +426,8 @@ arbitrary URL that the client generates to map to a fallback cached HTML entry. 
 ideally should serve as an "application shell" that is able to load the appropriate resources
 client-side, based on the request URL.
 
-**Note:** The current implementation searches the request's `accept` header and
-triggers the fallback when `'text/html'` is found. It does this whether or not
-the request is a navigation.
+**Note:** The current implementation determines whether or not
+a request is a navigation by checking `request.mode === 'navigate'`.
 
 _Default_: `''`
 
